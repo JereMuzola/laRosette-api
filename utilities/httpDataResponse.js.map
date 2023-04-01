@@ -1,0 +1,1 @@
+{"version":3,"file":"httpDataResponse.js","sourceRoot":"","sources":["../../src/utilities/httpDataResponse.ts"],"names":[],"mappings":";;;AAAA,mCAAyE;AAEzE,MAAa,gBAAgB;IAKzB;QAHD,UAAK,GAAmB,IAAI,qBAAa,CAAC,2BAAmB,CAAC,EAAE,EAAE,EAAE,CAAC,CAAC;QAIjE,IAAI,CAAC,KAAK,GAAG,IAAI,qBAAa,CAAC,2BAAmB,CAAC,EAAE,EAAE,EAAE,CAAC,CAAC;IAC/D,CAAC;CAEJ;AATD,4CASC"}

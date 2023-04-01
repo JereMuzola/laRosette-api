@@ -1,0 +1,36 @@
+import { HttpDataResponse } from 'src/utilities/httpDataResponse';
+import { LoggerService } from 'src/utilities/logger';
+import { StockService } from '../services/stock.service';
+export declare class StockController {
+    private readonly service;
+    private readonly logger;
+    constructor(service: StockService, logger: LoggerService);
+    addArticle(obj: any): Promise<HttpDataResponse<any>>;
+    addMouvementStock(obj: any): Promise<HttpDataResponse<any>>;
+    findArticle(code: string): Promise<HttpDataResponse<any>>;
+    findAllArticle(fkAgence: string): Promise<HttpDataResponse<any>>;
+    findValeurTotalInStock(fkAgence: string): Promise<HttpDataResponse<any>>;
+    findValeurInStockByArticle(fkAgence: string): Promise<HttpDataResponse<any>>;
+    findArticleByType(params: ['fkAgence', 'type']): Promise<HttpDataResponse<any>>;
+    findArticleArticle(fkAgence: string): Promise<HttpDataResponse<any>>;
+    findArticledDispo(fkAgence: string): Promise<HttpDataResponse<any>>;
+    findArticlePlat(fkAgence: string): Promise<HttpDataResponse<any>>;
+    deleteArticle(code: string): Promise<HttpDataResponse<any>>;
+    addCompositionArticle(obj: any): Promise<HttpDataResponse<any>>;
+    findCompositionArticle(id: number): Promise<HttpDataResponse<any>>;
+    findCompositionArticleByComposant(fkCompose: string): Promise<HttpDataResponse<any>>;
+    deleteComposition(id: number): Promise<HttpDataResponse<any>>;
+    addCategorieArticle(obj: any): Promise<HttpDataResponse<any>>;
+    findCategorieArticle(code: string): Promise<HttpDataResponse<any>>;
+    findAllCategorieArticle(): Promise<HttpDataResponse<any>>;
+    findCategorieArticleByUnite(unite: string): Promise<HttpDataResponse<any>>;
+    deleteCategorieArticle(code: string): Promise<HttpDataResponse<any>>;
+    findStock(code: string): Promise<HttpDataResponse<any>>;
+    findAllStock(): Promise<HttpDataResponse<any>>;
+    findStockByArticle(fkArticle: string): Promise<HttpDataResponse<any>>;
+    findAllStockAlerted(): Promise<HttpDataResponse<any>>;
+    getMouvementStockByTypeMouvement(obj: any): Promise<HttpDataResponse<any>>;
+    getMouvementStockByTypeMouvementGroupedByArticle(obj: any): Promise<HttpDataResponse<any>>;
+    getMouvementStockByArticle(article: string): Promise<HttpDataResponse<any>>;
+    getMouvementStockByArticleAndTypeMouvement(params: string[]): Promise<HttpDataResponse<any>>;
+}

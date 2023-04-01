@@ -1,0 +1,38 @@
+import { HttpDataResponse } from 'src/utilities/httpDataResponse';
+import { LoggerService } from 'src/utilities/logger';
+import { CommandeModel } from '../models/commande';
+import { AchatService } from '../services/achat.service';
+export declare class AchatController {
+    private readonly service;
+    private readonly logger;
+    constructor(service: AchatService, logger: LoggerService);
+    addCommande(obj: any): Promise<HttpDataResponse<any>>;
+    find(code: string): Promise<HttpDataResponse<any>>;
+    findByBDD(obj: any): Promise<HttpDataResponse<any>>;
+    validateCommande(payload: CommandeModel): Promise<HttpDataResponse<any>>;
+    validateCommandeByCoordon(payload: CommandeModel): Promise<HttpDataResponse<any>>;
+    annulerCommande(payload: CommandeModel): Promise<HttpDataResponse<any>>;
+    decaisserCommande(payload: CommandeModel): Promise<HttpDataResponse<any>>;
+    findAll(fkAgence: string): Promise<HttpDataResponse<any>>;
+    findAllBonDeDecaissement(fkAgence: string): Promise<HttpDataResponse<any>>;
+    findAllBonDeDecaissementByPeriod(obj: any): Promise<HttpDataResponse<any>>;
+    findAllOrdreDeDecaissement(fkAgence: string): Promise<HttpDataResponse<any>>;
+    findAllOrdreDeDecaissementByPeriod(obj: any): Promise<HttpDataResponse<any>>;
+    findAllCommandeByPeriodAndEtat(obj: any): Promise<HttpDataResponse<any>>;
+    findLast(fkAgence: string): Promise<HttpDataResponse<any>>;
+    findAllInit(fkAgence: string): Promise<HttpDataResponse<any>>;
+    findAllAnnule(fkAgence: string): Promise<HttpDataResponse<any>>;
+    findAllValide(fkAgence: string): Promise<HttpDataResponse<any>>;
+    findAllValideWithoutAgence(): Promise<HttpDataResponse<any>>;
+    findAllDecaisse(fkAgence: string): Promise<HttpDataResponse<any>>;
+    logicDeleteCommande(code: string): Promise<HttpDataResponse<any>>;
+    addAchat(obj: any): Promise<HttpDataResponse<any>>;
+    cloturerAchat(code: string): Promise<HttpDataResponse<any>>;
+    findAchat(code: string): Promise<HttpDataResponse<any>>;
+    findAllAchat(fkAgence: string): Promise<HttpDataResponse<any>>;
+    deleteAchat(code: string): Promise<HttpDataResponse<any>>;
+    addFournisseur(obj: any): Promise<HttpDataResponse<any>>;
+    findFournisseur(code: string): Promise<HttpDataResponse<any>>;
+    findAllFournisseur(): Promise<HttpDataResponse<any>>;
+    deleteFournisseur(code: string): Promise<HttpDataResponse<any>>;
+}

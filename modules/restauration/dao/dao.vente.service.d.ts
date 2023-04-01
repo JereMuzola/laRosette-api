@@ -1,0 +1,35 @@
+import { PrismaService } from 'src/orm/prisma.service';
+import { factureRestaurentModel } from '../models/factureRestaurent';
+import { FournisseurModel } from '../models/fournisseur';
+import { VenteModel } from '../models/vente';
+import { TableModel } from '../models/table';
+export declare class DaoVenteService {
+    private static _instance;
+    private static _prisma;
+    private static _daoCommonService;
+    static instance(): PrismaService;
+    constructor();
+    addVente(payload: VenteModel): Promise<VenteModel>;
+    updateVente(payload: VenteModel): Promise<VenteModel>;
+    payerVente(payload: any): Promise<VenteModel>;
+    getVente(code: string): Promise<VenteModel>;
+    getVenteByClientOrPeriod(client: string, fkAgence: String, dateDebut?: Date, dateFin?: Date): Promise<VenteModel[]>;
+    getAllVente(fkAgence: string, venteService: string, debut: Date, fin: Date): Promise<VenteModel[]>;
+    getDataForPieChartArticle(fkAgence: string, venteService: string, debut: Date, fin: Date): Promise<any>;
+    getDataForLineChartVenteDaily(fkAgence: string, venteService: string, debut: Date, fin: Date): Promise<any>;
+    getDataForLineChartVenteWeekly(fkAgence: string, venteService: string, debut: Date, fin: Date): Promise<any>;
+    getDataForLineChartVenteMonthly(fkAgence: string, venteService: string, debut: Date, fin: Date): Promise<any>;
+    getDataForLineChartVenteYearly(fkAgence: string, venteService: string, debut: Date, fin: Date): Promise<any>;
+    getLastVente(fkAgence: string, venteService: string): Promise<VenteModel[]>;
+    getAllVentePaid(fkAgence: string): Promise<VenteModel[]>;
+    getAllVenteNoPaid(fkAgence: string): Promise<VenteModel[]>;
+    getVenteByPeriod(debut: Date, fin: Date): Promise<VenteModel[]>;
+    logicDeleteVente(code: String): Promise<VenteModel>;
+    definitiveDeleteVente(payload: VenteModel): Promise<VenteModel>;
+    getFactureRestaurentByVente(fkVente: string): Promise<factureRestaurentModel>;
+    addFournisseur(payload: FournisseurModel): Promise<FournisseurModel>;
+    getAllFournisseur(): Promise<FournisseurModel[]>;
+    addTable(payload: TableModel): Promise<TableModel>;
+    getTable(code: string): Promise<TableModel>;
+    getAllTable(fkAgence: string): Promise<TableModel[]>;
+}
